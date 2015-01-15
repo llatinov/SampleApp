@@ -1,0 +1,3 @@
+# SampleApp
+This project is intended to demonstrate automation of WPF application containing WinForms with Telerik Testing Framework and TestStack White.
+More details can be found in the original blog post <a target="_blank" href="http://llatinov.blogspot.com/2014/10/automation-of-wpf-applications-with-telerik-testing-framework-and-teststack-white.html">Automation of WPF applications with Telerik Testing Framework and TestStack White</a>.
