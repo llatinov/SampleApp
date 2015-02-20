@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace WpfApplication1
+namespace SampleApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
