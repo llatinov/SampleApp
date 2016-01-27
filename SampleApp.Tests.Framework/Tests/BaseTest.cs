@@ -1,5 +1,6 @@
 ﻿using ArtOfTest.WebAii.Core;
 using SampleApp.Tests.Framework.Elements;
+using System.IO;
 using White.Core;
 
 namespace SampleApp.Tests.Framework.Tests
@@ -7,13 +8,16 @@ namespace SampleApp.Tests.Framework.Tests
     public class BaseTest
     {
         protected App App { get; set; }
-        private string applicationPath = "C:\\SampleApp\\SampleApp\\bin\\Debug\\SampleApp.exe";
+        protected static string CurrentPath
+        {
+            get { return Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar; }
+        }
 
         protected void Start()
         {
             if (App == null)
             {
-                Application appWhite = Application.Launch(applicationPath);
+                Application appWhite = Application.Launch(CurrentPath + "SampleApp.exe");
                 Manager manager = new Manager(false);
                 manager.Start();
                 App = new App(manager.ConnectToApplication(appWhite.Process), appWhite);

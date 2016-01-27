@@ -6,6 +6,8 @@ namespace SampleApp.Tests
     [TestClass]
     public class UnitTest1 : BaseTest
     {
+        private string imagePath = CurrentPath + "HappyFace.jpg";
+
         [TestInitialize]
         public void Initialise()
         {
@@ -24,33 +26,31 @@ namespace SampleApp.Tests
         [TestMethod]
         public void OpenFile_OnAttachFile_GivesMessageAndFileIsShown()
         {
-            string filePath = @"C:\SampleApp\SampleApp\bin\Debug\HappyFace.jpg";
             App.MainWindow.ClickBrowseButton();
-            App.OpenFile.EnterFileName(filePath);
+            App.OpenFile.EnterFileName(imagePath);
             App.OpenFile.ClickOpenButton();
             Assert.AreEqual("Successfully done", App.MessageBox.GetText());
             App.MessageBox.ClickOkButton();
-            Assert.AreEqual(filePath, App.MainWindow.GetFilePathAtIndex(1));
+            Assert.AreEqual(imagePath, App.MainWindow.GetFilePathAtIndex(1));
         }
 
         [TestMethod]
         public void OpenFile_OnAttachTwoFiles_GivesMessageAndFilesAreShown()
         {
-            string filePath = @"C:\SampleApp\SampleApp\bin\Debug\HappyFace.jpg";
             // Attach file
             App.MainWindow.ClickBrowseButton();
-            App.OpenFile.EnterFileName(filePath);
+            App.OpenFile.EnterFileName(imagePath);
             App.OpenFile.ClickOpenButton();
             Assert.AreEqual("Successfully done", App.MessageBox.GetText());
             App.MessageBox.ClickOkButton();
-            Assert.AreEqual(filePath, App.MainWindow.GetFilePathAtIndex(1));
+            Assert.AreEqual(imagePath, App.MainWindow.GetFilePathAtIndex(1));
             // Attach again
             App.MainWindow.ClickBrowseButton();
-            App.OpenFile.EnterFileName(filePath);
+            App.OpenFile.EnterFileName(imagePath);
             App.OpenFile.ClickOpenButton();
             Assert.AreEqual("Successfully done", App.MessageBox.GetText());
             App.MessageBox.ClickOkButton();
-            Assert.AreEqual(filePath, App.MainWindow.GetFilePathAtIndex(2));
+            Assert.AreEqual(imagePath, App.MainWindow.GetFilePathAtIndex(2));
         }
 
         [TestCleanup]

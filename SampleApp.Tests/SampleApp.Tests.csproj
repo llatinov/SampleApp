@@ -66,6 +66,10 @@
       <Project>{f705fef3-c4f4-4537-8ae3-a4012fc70e47}</Project>
       <Name>SampleApp.Tests.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SampleApp\SampleApp.csproj">
+      <Project>{797d93cc-cc32-4d20-8f7d-b278da724f55}</Project>
+      <Name>SampleApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
