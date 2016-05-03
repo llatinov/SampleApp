@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="ArtOfTest.WebAii, Version=2015.3.1314.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\ArtOfTest.WebAii.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>Lib\Castle.Core.dll</HintPath>
